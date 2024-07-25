@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Manager Product</title>
+        <!-- Bootstrap Styles-->
+        <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+        <!-- FontAwesome Styles-->
+        <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+        <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+        <!-- Google Fonts-->
+        <link
+          href="http://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link rel="stylesheet" href="./user.css" />
+        <style></style>
+      </head>
+        <a href="../../LoginRegister/Register.html"></a>
+      <body>
+        <div id="wrapper">
+          <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+              <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target=".sidebar-collapse"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">Dream</a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+              <li class="dropdown">
+                <a
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="#"
+                  aria-expanded="false"
+                  ><span style="color: yellow">Đinh Đại Dương</span>
+                  <img
+                    style="width: 40px; height: 40px; border-radius: 50%"
+                    src="https://tmssl.akamaized.net/images/foto/galerie/ronaldo-cristiano-2017-real-madrid-ballon-d-or-2016-0026751808hjpg-1698686328-120749.jpg?lm=1698686338"
+                    alt=""
+                  />
+                  <button id="logout" type="button">Log Out</button>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-user fa-fw"></i> User Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                  </li>
+                </ul>
+                <!-- /.dropdown-user -->
+              </li>
+              <!-- /.dropdown -->
+            </ul>
+          </nav>
+          <!--/. NAV TOP  -->
+          <a href=""></a>
+          <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+              <ul class="nav" id="main-menu">
+                <li>
+                  <a href="../manage-skills/skill.html">Kỹ năng </a>
+                </li>
+                <li>
+                  <a style="background-color: palevioletred" href="duan.html">
+                    <span>Dự án</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- /. NAV SIDE  -->
+          <div id="page-wrapper">
+            <div id="page-inner">
+              <div class="row">
+                <div class="col-md-12"></div>
+              </div>
+              <!-- ngay day -->
+              <!-- bảng, form thêm, tìm kiếm<input>, sắp xếp<select-option> -->
+
+              <section class="container-product">
+                <h1 style="text-align: center">User List</h1>
+                <div class="form-input" style="display: flex">
+                  <div>
+                    <input id="searchuser" type="text" />
+                    <button
+                      id="search"
+                      style="
+                        padding: 4px;
+                        background-color: bisque;
+                        border: 1px solid rgba(0, 0, 0, 0.5);
+                        border-radius: 5px;
+                      "
+                      type="button"
+                    >
+                      Search
+                    </button>
+                    <p id="error1"></p>
+                  </div>
+                  <div>
+                    <label for="">Sắp xếp</label>
+                    <select name="" id="sortall">
+                      <option value="bandan">Ban Đầu</option>
+                      <option value="tangdan">Tăng dần</option>
+                      <option value="giamdan">Gỉam dần</option>
+                    </select>
+                  </div>
+                </div>
+
+                <table>
+                  <thead>
+                    <tr id="list-newp">
+                      <th>ID</th>
+                      <th>Fullname</th>
+                      <th>Phone</th>
+                      <th>Email</th>
+                      <th>Password</th>
+                      <th>Stattus</th>
+                      <th>Role</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="list-category"></tbody>
+                </table>
+                <div class="pagination " id="pagination-user"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </body>
+      <script src="./user.js"></script>
+      <script
+        src="https://kit.fontawesome.com/d214b8e9b3.js"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://kit.fontawesome.com/d214b8e9b3.js"
+        crossorigin="anonymous"
+      ></script>
+    </html>
+  </body>
+</html>

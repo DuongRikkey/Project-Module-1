@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Dream</title>
+    <!-- Bootstrap Styles-->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./category.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e9edf5;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #d3d9e9;
+      }
+      .row {
+        padding-left: 10px;
+      }
+      .header img {
+        width: 30px;
+      }
+      .header-right {
+        display: flex;
+        align-items: center;
+      }
+      .header-right span {
+        margin-right: 20px;
+      }
+      .container {
+        padding: 20px;
+      }
+      .search-bar {
+        display: flex;
+
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .search-bar input,
+      .search-bar select {
+        padding: 5px;
+        margin-right: 10px;
+      }
+      .search-bar button {
+        padding: 5px 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #b3b3b3;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        table-layout: auto;
+      }
+      .pagination {
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .pagination a {
+        margin: 0 5px;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #b3b3b3;
+        background-color: #fff;
+        color: #000;
+      }
+      .pagination a.active {
+        background-color: #2d8cff;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".sidebar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Dream</a>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+          <li class="dropdown">
+            <a
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              href="#"
+              aria-expanded="false"
+            >
+              <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+              </li>
+            </ul>
+            <!-- /.dropdown-user -->
+          </li>
+          <!-- /.dropdown -->
+        </ul>
+      </nav>
+      <!--/. NAV TOP  -->
+      <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav" id="main-menu">
+            <li>
+              <a class="active-menu" href="index.html"
+                ><i class="fa fa-dashboard"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="ui-elements.html"
+                ><i class="fa fa-desktop"></i> UI Elements</a
+              >
+            </li>
+            <li>
+              <a href="table.html"
+                ><i class="fa fa-table"></i> Responsive Tables</a
+              >
+            </li>
+            <li>
+              <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
+            </li>
+            <li>
+              <a href="empty.html"
+                ><i class="fa fa-fw fa-file"></i> Empty Page</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- /. NAV SIDE  -->
+      <div id="page-wrapper">
+        <div id="page-inner">
+          <div class="row">
+            <div class="col-md-12">
+              <div style="margin-left: 30px" class="header">
+                <i class="fa-solid fa-bars"></i>
+                <div class="header-right">
+                  <span>Chào mừng bạn đã quay trở lại</span>
+                  <span>Duong</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ngay day -->
+          <!-- bảng, form thêm, tìm kiếm<input>, sắp xếp<select-option> -->
+          <div class="menu-total">
+            <div class="menu-duong">
+              <label id="Updatename" for="">Thêm Danh Mục</label>
+              <input
+                id="category-input-name"
+                type="search"
+                name=""
+                id=""
+                placeholder="Tên danh mục"
+              />
+              <p id="error-1" style="color: red"></p>
+            </div>
+            <div class="menu-right">
+              <button type="button" id="btn-Agree">Đồng ý</button>
+              <button type="button" id="btn-Cancel">Hủy</button>
+            </div>
+          </div>
+          <div class="container">
+            <div class="search-bar">
+              <div>
+                <input id="input-search" type="text" placeholder="Search" />
+                <button id="btn-search">Search</button>
+              </div>
+
+              <section>
+                <label for="">Sort</label>
+                <select name="" id="sortall">
+                  <option value="bandau">Ban đầu</option>
+                  <option value="tangdan">Tăng dần</option>
+                  <option value="giamdan">Gỉam dần</option>
+                </select>
+              </section>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Hành đông</th>
+                </tr>
+              </thead>
+
+              <tbody id="list-category">
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>A0</td>
+                  <td>
+                    <button>Update</button>
+                    <button onclick="deleteCategory">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- <div class="pagination">
+              <a href="#">&lt;</a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">7</a>
+              <a href="#">8</a>
+              <a href="#">9</a>
+              <a href="#">10</a>
+              <a href="#">&gt;</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./categort.js"></script>
+  <!-- <script
+    src="https://kit.fontawesome.com/d214b8e9b3.js"
+    crossorigin="anonymous"
+  ></script> -->
+</html>
