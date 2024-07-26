@@ -67,7 +67,7 @@ a {
   background-color: black;
   height: 60px;
   padding: 0 70px;
-  gap: 320px;
+  gap: 280px;
 }
 .navbar-hero :nth-child(1) {
   display: flex;

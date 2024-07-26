@@ -266,5 +266,8 @@ textarea {
 }
 
 .blackpink {
-  color: yellow !important;
+  background-color: yellow !important;
+}
+.blackpink2 {
+  background-color: #b3b3b3 !important;
 }

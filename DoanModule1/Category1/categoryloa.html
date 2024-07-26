@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./cate.css" />
-    <link rel="stylesheet" href="./Doan.css" />
+    <link rel="stylesheet" href="../Doan.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -54,11 +54,11 @@
       </nav>
       <!-- end navbar -->
       <!-- Star Hero -->
-      <nav class="navbar-hero">
+      <nav class="navbar-hero1">
         <ul>
           <li>
             <a href=""
-              ><img width="22px" height="22px" src="./home.jpg" alt=""
+              ><img width="22px" height="22px" src="../home.jpg" alt=""
             /></a>
           </li>
           <li><a href="">LOA MARSHALL</a></li>
@@ -70,19 +70,21 @@
         </ul>
         <ul class="nav-menur">
           <i
+            id="search"
             style="color: white; font-size: large"
             class="fa-solid fa-magnifying-glass"
           ></i>
+          <input type="text" name="" id="inpsearch" />
           <li class="test">
             <a href=""> <i class="fa-regular fa-user"></i></a>
-            <a href=""><i class="fa-solid fa-shuffle"></i></a>
-            <a href=""><i class="fa-regular fa-heart"></i></a>
+            <!-- <a href=""><i class="fa-solid fa-shuffle"></i></a>
+            <a href=""><i class="fa-regular fa-heart"></i></a> -->
           </li>
           <li>
             <a href="">
               <img
                 style="width: 18px; height: 18px; color: azure"
-                src="./icons8-shopping-cart-64.png"
+                src="../icons8-shopping-cart-64.png"
                 alt=""
               />
             </a>
@@ -95,7 +97,7 @@
           <li class="nav-flag">
             <img
               style="width: 21px; height: 15px"
-              src="./vietnam-flag-icon.svg"
+              src="../vietnam-flag-icon.svg"
               alt=""
             />
             <a href=""
@@ -116,11 +118,11 @@
         <p>Trang chủ / <span> Loa Marshall </span></p>
         <p>Hiển thị 1–12 của 14 kết quả</p>
       </main>
-      <main class="list-main">
+      <main class="list-main" id="list-category">
         <main class="main-product">
           <img
             style="height: 55px; width: 100px"
-            src="./Image/cate1.jpg"
+            src="../Image/cate1.jpg"
             alt=""
           />
           <p>
@@ -131,10 +133,10 @@
           </p>
         </main>
 
-        <main class="main-product">
+        <!-- <main class="main-product">
           <img
             style="height: 55px; width: 100px"
-            src="./Image/cate2.jpg"
+            src="../Image/cate2.jpg"
             alt=""
           />
           <p>
@@ -145,12 +147,12 @@
               <span>6 product</span>
             </a>
           </p>
-        </main>
+        </main> -->
 
-        <main class="main-product">
+        <!-- <main class="main-product">
           <img
             style="height: 55px; width: 100px"
-            src="./Image/cate3.jpg"
+            src="../Image/cate3.jpg"
             alt=""
           />
           <p>
@@ -159,14 +161,14 @@
               <span>1 product</span>
             </a>
           </p>
-        </main>
+        </main> -->
       </main>
     </main>
 
     <!-- test range -->
     <div class="total">
       <div class="main-superjunior">
-        <div class="filter">
+        <!-- <div class="filter">
           <h3>Lọc Sản Phẩm</h3>
           <div class="price-filter">
             <label for="price-range">Giá</label>
@@ -180,30 +182,35 @@
             <span id="price-value">2.690.000 ₫ - 16.190.000 ₫</span>
             <button id="filter-button">Lọc</button>
           </div>
-          <!-- <div class="filter-section">
-          <h3>Diện Tích Sử Dụng</h3>
-          Add options here -->
-          <!-- </div>
-        <div class="filter-section">
-          <h3>Màu Sắc</h3> -->
-          <!-- Add options here -->
-          <!-- </div>
-        <div class="filter-section">
-          <h3>Công Suất</h3> -->
-          <!-- Add options here -->
-          <!-- </div> -->
+        </div> -->
+        <div class="hehe">
+          <span style="font-size: 30px; font-weight: 600; color: #242424">
+            PHỤ KIỆN MARSHALL
+          </span>
+          <div>
+            <label for="">Sắp xếp</label>
+            <br />
+            <select name="" id="filter">
+              <option value="0">Tất cả</option>
+              <option value="1">2tr -> 4tr</option>
+              <option value="2">4tr -> 8tr</option>
+              <option value="3">8tr -> 12tr</option>
+              <option value="4">12tr -> 15tr</option>
+              <option value="5">> 15tr</option>
+            </select>
+          </div>
         </div>
         <div class="text-prdouct-right">
-          <div class="text-hero">
-            <span style="font-size: 26px; font-weight: 600; color: #242424">
-              PHỤ KIỆN MARSHALL
-            </span>
-            <div class="total-product-cheap">
+          <div class="text-hero" style="display: flex; justify-content: center">
+            <div
+              class="total-product-cheap"
+              style="display: flex; flex-wrap: wrap"
+            >
               <div class="new-product">
                 <img
                   style="width: 195px; height: 197px"
                   class="img-product"
-                  src="./Image/ctms1.png"
+                  src="../Image/ctms1.png"
                   alt=""
                 />
                 <div class="text-marshall-small">
@@ -240,138 +247,10 @@
                   </div>
                 </div>
               </div>
-
-              <div class="new-product">
-                <img
-                  style="width: 195px; height: 197px"
-                  class="img-product"
-                  src="./Image/ctms2.png"
-                  alt=""
-                />
-                <div class="text-marshall-small">
-                  <p class="cheap-ms">MARSHALL EMBERTON 2</p>
-                  <p class="color-ms-cheap">LOA MARSHALL, <br />LOA DI ĐỘNG</p>
-                  <p class="Star-Yellow-Cheap">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </p>
-                  <p style="font-size: 14px; font-weight: bold">
-                    <i style="font-size: 15px" class="fa-solid fa-check"></i> In
-                    Stock
-                  </p>
-                  <p>
-                    <span class="bold-ms">11.390.000 ₫ </span>
-                  </p>
-                  <p>
-                    <i style="color: #dd9934" class="fa-solid fa-circle"></i
-                    ><i
-                      style="padding: 5px; color: #f4eede; font-size: 15px"
-                      class="fa-solid fa-circle"
-                    ></i>
-                  </p>
-                  <p>
-                    <button class="smart-ms" href="">
-                      Lựa Chọn Các Tùy Chọn
-                    </button>
-                  </p>
-                  <div class="infor-news-small">
-                    <p class="black">-19%</p>
-                    <p class="red">HOT</p>
-                    <p class="green">NEW</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="new-product">
-                <img
-                  style="width: 195px; height: 197px"
-                  class="img-product"
-                  src="./Image/ctms3.png"
-                  alt=""
-                />
-                <div class="text-marshall-small2">
-                  <p class="cheap-ms">MARSHALL EMBERTON</p>
-
-                  <p class="color-ms-cheap">
-                    LOA MARSHALL, <br />
-                    LIMITED EDITION, <br />LOA DI ĐỘNG
-                  </p>
-                  <p class="Star-Yellow-Cheap">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </p>
-                  <p style="font-size: 14px; font-weight: bold">
-                    Available on backorder
-                  </p>
-                  <p>
-                    <span class="bold-ms">7.890.000 ₫</span>
-                  </p>
-                  <p>
-                    <i class="fa-solid fa-circle"></i>
-                  </p>
-                  <p>
-                    <button class="smart-ms" href="">
-                      Lựa Chọn Các Tùy Chọn
-                    </button>
-                  </p>
-                  <div class="infor-news-small">
-                    <p class="black">-20%</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="new-product">
-                <img
-                  style="width: 195px; height: 197px"
-                  class="img-product"
-                  src="./Image/ctms4.png"
-                  alt=""
-                />
-                <div class="text-marshall-small">
-                  <p class="cheap-ms">MARSHALL KILBURN 2</p>
-                  <p class="color-ms-cheap">LOA MARSHALL, <br />LOA DI ĐỘNG</p>
-                  <p class="Star-Yellow-Cheap">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </p>
-                  <p style="font-size: 14px; font-weight: bold">
-                    <i style="font-size: 15px" class="fa-solid fa-check"></i>
-                    Out of stock
-                  </p>
-                  <p>
-                    <span class="bold-ms">5.890.000 ₫</span>
-                  </p>
-                  <p>
-                    <i class="fa-solid fa-circle"></i
-                    ><i
-                      style="padding: 5px; color: #dd9935; font-size: 15px"
-                      class="fa-solid fa-circle"
-                    ></i>
-                  </p>
-                  <p>
-                    <button class="smart-ms" href="">
-                      Lựa Chọn Các Tùy Chọn
-                    </button>
-                  </p>
-                  <div class="infor-news-small">
-                    <p class="black">-21%</p>
-                    <p class="red">HOT</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div class="text-hero">
+          <!-- <div class="text-hero">
             <div class="total-product-cheap">
               <div class="new-product">
                 <img
@@ -717,7 +596,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -817,6 +696,7 @@
     src="https://kit.fontawesome.com/d214b8e9b3.js"
     crossorigin="anonymous"
   ></script>
+  <script src="./cate.js"></script>
   <script type="module" defer>
     import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
     polyfillCountryFlagEmojis();

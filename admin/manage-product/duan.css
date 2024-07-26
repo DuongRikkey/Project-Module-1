@@ -263,5 +263,5 @@ textarea {
   width: 100%;
 }
 .blackpink {
-  background-color: red;
+  background-color: red !important;
 }

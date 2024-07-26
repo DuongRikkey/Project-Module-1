@@ -104,7 +104,7 @@ creat.onclick = function () {
             image: imageBase64,  //b3 image
             price: +priceinput.value,
             categoryId: +inputcate.value,
-            inventory: +inventoryinput.value
+            inventory: inventoryinput.value
         };
         productdb.push(smart)
         localStorage.setItem("product", JSON.stringify(productdb));
@@ -117,6 +117,9 @@ creat.onclick = function () {
         let idUpdateGlobalindex = productdb.findIndex(e => e.id === idUd)
         productdb[idUpdateGlobalindex].productName = nameiput.value;
         productdb[idUpdateGlobalindex].price = priceinput.value;
+        productdb[idUpdateGlobalindex].categoryId = inputcate.value;
+        productdb[idUpdateGlobalindex].image = imageBase64;
+        productdb[idUpdateGlobalindex].inventory = inventoryinput.value;
         localStorage.setItem("product", JSON.stringify(productdb))
         nameiput.value = ""
         priceinput.value = ""
@@ -141,7 +144,7 @@ function renderSkills() {
     productdb = productdb.filter((el) => el.productName.toLowerCase().includes(inputSearch.value.trim().toLowerCase()))
     console.log(productdb.filter((el) => el.productName.toLowerCase().includes(inputSearch.value.trim().toLowerCase())));
 
-
+    // phân loại loa theo ID truyền vào từ category
     if (+filterCategory.value !== 0) {
         productdb = productdb.filter((el) => el.categoryId === +filterCategory.value)
     }
@@ -188,8 +191,9 @@ function renderSkills() {
 
 
     let stringHTML = "";
+    console.log(productdb);
+    console.log(categorydb);
     for (let i = 0; i < productdb.length; i++) {
-        console.log(`${categorydb.find(el => el.id == productdb[i].categoryId).name}`);
         stringHTML += `
             <tr >
                 <td>${i + 1}</td>
@@ -198,7 +202,8 @@ function renderSkills() {
                 </td>
                 <td>${productdb[i].productName}</td></td>
                 <td>${Number(productdb[i].price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</td>
-                <td>${categorydb.find(el => el.id == productdb[i].categoryId).name}</td>
+                <td>${categorydb.find(el => el.id == productdb[i].categoryId)?.name}</td>
+                
                 
                 <td>${productdb[i].inventory}</td>
 
@@ -233,6 +238,10 @@ function enterEdit(idcanedit) {
     })
     nameiput.value = giatri.productName;
     priceinput.value = giatri.price
+    inputcate.value = giatri.categoryId
+    document.getElementById('image-product').src = giatri.image
+    inventoryinput.value = giatri.inventory
+
     idUd = idcanedit;
     idUpdateGlobal = "update"
     overlay.style.display = "block";

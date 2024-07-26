@@ -10,6 +10,8 @@ let curentPage = 1
 let pagesize = 5
 let paginationUser = document.getElementById("pagination-user")
 
+
+
 // let dbuser = JSON.parse(localStorage.getItem("users")) || []
 // dbuser.push({
 //     id: 1,
@@ -24,9 +26,12 @@ let paginationUser = document.getElementById("pagination-user")
 // localStorage.setItem('users', JSON.stringify(dbuser))
 
 function Renderuser() {
+    //Timf kiem
     let dbuser = JSON.parse(localStorage.getItem("users")) || []
     dbuser = dbuser.filter((el) => el.fullname.toLowerCase().includes(searchuser.value.trim().toLowerCase()))
-
+    
+    // -------------------------------------
+    // sap xep be lon
     switch (sortall.value) {
         case `bandau`:
             break;
@@ -38,7 +43,9 @@ function Renderuser() {
         case `giamdan`:
             dbuser.sort((a, b) => b.fullname.localeCompare(a.fullname))
             break;
-    }
+    } 
+
+
 
     renderPagination()
 
@@ -58,6 +65,8 @@ function Renderuser() {
                 <td>${dbuser[i].email}</td>
                 <td>${dbuser[i].password}</td>
                 <td>${dbuser[i].status ? "Active" : "Block"}</td>
+                
+
                 <td>${dbuser[i].role ? "Admin" : "User"}</td>
                 <td>
                     <button onclick="changeStatus(${dbuser[i].id})" style="display: ${dbuser[i].role ? "none" : ""}" >Open/Block</button>
@@ -76,6 +85,7 @@ sortall.onchange = function () {
 search.onclick = function () {
     Renderuser()
 }
+//Phân trang như này
 function renderPagination() {
     let dbuser = JSON.parse(localStorage.getItem("users")) || []
 
@@ -86,10 +96,10 @@ function renderPagination() {
     string += `<a class="page-button" onclick="clickPage('prev')" >&lt;</a>`;
 
     for (let i = 1; i <= totalPage; i++) {
-        string += `<a onclick="changePage(${i})" ${curentPage == i ? "blackpink" : ""}" id="${i}">${i}</a>`
+        string += `<a onclick="changePage(${i})" class="page-button  ${curentPage == i ? "blackpink" : "blackping2"}">${i}</a>`
     }
 
-    string += `<a class="page-button" onclick="clickPage('next')" >&gt;</a>`;
+    string += `<a class="page-button" onclick="clickPage('next')"  >&gt;</a>`;
 
     paginationUser.innerHTML = string;
 }

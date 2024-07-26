@@ -12,6 +12,7 @@ const inputpassconfirm = document.getElementById("inputpassconfirm");
 const register = document.getElementById("register");
 const login = document.getElementById("login");
 
+
 let registerdb = JSON.parse(localStorage.getItem("register"));
 let error1 = document.getElementById("error1");
 let error2 = document.getElementById("error2");
@@ -21,6 +22,7 @@ let error5 = document.getElementById("error5");
 
 let iploginemail = document.getElementById("iploginemail");
 let iploginpass = document.getElementById("iploginpass");
+
 
 btn.onclick = function () {
     if (clickCount % 2 === 0) {
@@ -67,6 +69,10 @@ register.onclick = function () {
     }
 
     const index = registerdb.findIndex((el) => el.email == registeremail);
+    const indexphone = registerdb.findIndex((el) => el.phone == registerphone)
+    console.log(registerdb.findIndex((el) => el.phone = registerphone));
+
+
     if (index !== -1) {
         error2.innerHTML = "Email bi trung!";
         error2.style.color = "red";
@@ -75,14 +81,30 @@ register.onclick = function () {
         error2.innerHTML = "";
     }
 
+
+
     if (!registerphone) {
         error3.innerHTML = "Mời bạn nhập lại không được để trống!";
         error3.style.color = "red";
         errorOccurred = true;
-    } else {
-        error3.innerHTML = "";
+    } else if (registerphone.length !== 10) {
+        error3.innerHTML = "Số điện thoại không chính xác";
+        error3.style.color = "red";
+        errorOccurred = true;
+    }
+    else {
+        error3.innerHTML = ""
+
     }
 
+    // Tìm vị trí trùng phải sau nhé
+    if (indexphone !== -1) {
+        error3.innerHTML = "Số điện thoại đã trùng lặp";
+        errorOccurred = true;
+    }
+    else {
+        error3.innerHTML = "";
+    }
     if (!registerpass) {
         error4.innerHTML = "Mời bạn nhập lại không được để trống!";
         error4.style.color = "red";
@@ -101,7 +123,7 @@ register.onclick = function () {
         errorOccurred = true;
     } else if (registerpass !== registerpassconfirm) {
         error5.innerHTML = "Xác nhận mật khẩu không khớp!";
-        error4.style.color = "red";
+        error5.style.color = "red";
         errorOccurred = true;
     } else {
         error5.innerHTML = "";
@@ -116,7 +138,7 @@ register.onclick = function () {
         return;
     }
 
-    // Xử lý lưu thông tin vào local storage
+
     let id = 1;
     if (registerdb.length > 0) {
         id = registerdb[registerdb.length - 1].id + 1;
@@ -135,7 +157,6 @@ register.onclick = function () {
     registerdb.push(overview);
     localStorage.setItem("users", JSON.stringify(registerdb));
 
-    // Đặt các trường lại sau khi đăng ký thành công (nếu cần thiết)
     inputname.value = "";
     inputemail.value = "";
     inputphone.value = "";
@@ -148,14 +169,18 @@ register.onclick = function () {
     error5.innerHTML = "";
     document.getElementById("terms").checked = false;
 
-    // Thông báo thành công (nếu cần thiết)
+
     alert("Đăng ký thành công!");
-    window.location.href = "https://www.google.com";
     btn.innerHTML = "Đăng Ký";
     test1.style.display = "block";
     test2.style.display = "none";
 
 };
+
+
+
+
+
 login.onclick = function () {
     let dbUsers = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -163,8 +188,9 @@ login.onclick = function () {
         email: iploginemail.value,
         password: iploginpass.value,
     };
-
+    //tìm vị trí email xem có khớp trong dữ liệu ko
     const userFind = dbUsers.find((el) => el.email == account.email);
+    //const useFind= dbUsers.fin((el) => el.mail== account.email);
 
     console.log(userFind);
 
@@ -173,22 +199,26 @@ login.onclick = function () {
         return;
     }
 
+
     if (userFind.password !== account.password) {
         console.log(userFind.password, account.password);
         alert("Thong tin sai");
         return;
     }
 
+
     if (!userFind.status) {
         alert("Tk bi khoa")
         return
     }
+
     if (userFind.role == 0) {
         localStorage.setItem("user-login", JSON.stringify(userFind));
         alert("Thành công")
         window.location.href = "../DoanModule1/Doan.html"
     } else {
         localStorage.setItem("admin-login", JSON.stringify(userFind));
-        window.location.href = "../"
+        window.location.href = "../admin/manage-user/user.html"
     }
+
 };
