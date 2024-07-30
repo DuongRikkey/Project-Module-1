@@ -10,6 +10,11 @@
     <link href="../assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom Styles-->
     <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ddvJu5q5YErqvRfZwm4QxpEGUSduPdL0NEnUZKQAq4s8aUh5rzfEZPlxbJ7qGcFX84c&usqp=CAU"
+    />
     <!-- Google Fonts-->
     <link
       href="http://fonts.googleapis.com/css?family=Open+Sans"
@@ -17,126 +22,31 @@
       type="text/css"
     />
     <link rel="stylesheet" href="./category.css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #e9edf5;
-      }
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        background-color: #d3d9e9;
-      }
-      .row {
-        padding-left: 10px;
-      }
-      .header img {
-        width: 30px;
-      }
-      .header-right {
-        display: flex;
-        align-items: center;
-      }
-      .header-right span {
-        margin-right: 20px;
-      }
-      .container {
-        padding: 20px;
-      }
-      .search-bar {
-        display: flex;
-
-        justify-content: space-evenly;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-      .search-bar input,
-      .search-bar select {
-        padding: 5px;
-        margin-right: 10px;
-      }
-      .search-bar button {
-        padding: 5px 10px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: #fff;
-      }
-      table,
-      th,
-      td {
-        border: 1px solid #b3b3b3;
-      }
-      th,
-      td {
-        padding: 10px;
-        text-align: center;
-        table-layout: auto;
-      }
-      .pagination {
-        text-align: center;
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-      }
-      .pagination a {
-        margin: 0 5px;
-        padding: 8px 16px;
-        text-decoration: none;
-        border: 1px solid #b3b3b3;
-        background-color: #fff;
-        color: #000;
-      }
-      .pagination a.active {
-        background-color: #2d8cff;
-        color: #fff;
-      }
-    </style>
   </head>
 
   <body>
     <div id="wrapper">
       <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target=".sidebar-collapse"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="index.html">Dream</a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
           <li class="dropdown">
-            <a
-              class="dropdown-toggle"
-              data-toggle="dropdown"
-              href="#"
-              aria-expanded="false"
-            >
-              <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-              <li>
-                <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-              </li>
-            </ul>
+            <div id="navbar-right-top">
+              <span id="text-name-account" style="color: white"></span>
+              <button id="login" type="button">Log In</button>
+              <img
+                style="width: 60px; height: 60px; border-radius: 50%"
+                src="https://tmssl.akamaized.net/images/foto/galerie/ronaldo-cristiano-2017-real-madrid-ballon-d-or-2016-0026751808hjpg-1698686328-120749.jpg?lm=1698686338"
+                alt=""
+              />
+              <i
+                id="btn-logout"
+                style="color: white"
+                class="fa-solid fa-right-from-bracket"
+              ></i>
+            </div>
             <!-- /.dropdown-user -->
           </li>
           <!-- /.dropdown -->
@@ -147,27 +57,21 @@
         <div class="sidebar-collapse">
           <ul class="nav" id="main-menu">
             <li>
-              <a class="active-menu" href="index.html"
-                ><i class="fa fa-dashboard"></i> Dashboard</a
+              <a
+                style="background-color: palevioletred"
+                href="../manage-category/category.html"
               >
-            </li>
-            <li>
-              <a href="ui-elements.html"
-                ><i class="fa fa-desktop"></i> UI Elements</a
-              >
-            </li>
-            <li>
-              <a href="table.html"
-                ><i class="fa fa-table"></i> Responsive Tables</a
-              >
-            </li>
-            <li>
-              <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
-            </li>
-            <li>
-              <a href="empty.html"
-                ><i class="fa fa-fw fa-file"></i> Empty Page</a
-              >
+                <span> Category</span>
+              </a>
+              <a href="../manage-product/product.html">
+                <span>Product</span>
+              </a>
+              <a href="../manage-user/user.html">
+                <span>User List</span>
+              </a>
+              <a href="../manage-tablelistoder/listoder.html">
+                <span>List Oder</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -175,17 +79,7 @@
       <!-- /. NAV SIDE  -->
       <div id="page-wrapper">
         <div id="page-inner">
-          <div class="row">
-            <div class="col-md-12">
-              <div style="margin-left: 30px" class="header">
-                <i class="fa-solid fa-bars"></i>
-                <div class="header-right">
-                  <span>Chào mừng bạn đã quay trở lại</span>
-                  <span>Duong</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="row"></div>
 
           <!-- ngay day -->
           <!-- bảng, form thêm, tìm kiếm<input>, sắp xếp<select-option> -->
@@ -267,8 +161,8 @@
   </body>
 
   <script src="./categort.js"></script>
-  <!-- <script
+  <script
     src="https://kit.fontawesome.com/d214b8e9b3.js"
     crossorigin="anonymous"
-  ></script> -->
+  ></script>
 </html>

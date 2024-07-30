@@ -1,11 +1,8 @@
-* {
-  font-family: "Open Sans", sans-serif;
-  padding: 0;
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  box-sizing: border-box;
-}
-html {
-  background-color: #f6f6f6;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 li {
   list-style-type: none;
@@ -50,6 +47,9 @@ a {
   font-size: 18px;
   color: #333333;
 }
+.test {
+  display: flex;
+}
 .test i {
   font-size: 30px;
   padding: 14px 14px;
@@ -64,6 +64,7 @@ a {
 .navbar-hero {
   display: flex;
   align-items: center;
+
   background-color: black;
   height: 60px;
   padding: 0 70px;
@@ -94,8 +95,76 @@ a {
   gap: 10px;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.billing-details,
+.order-details {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 48%;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.order-details .order-summary {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.order-details .product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-direction: row;
+}
+
+.order-details .subtotal,
+.order-details .shipping,
+.order-details .total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.order-details .total {
+  font-size: 1.2em;
+  color: #d9534f;
+}
+
+#creat-product {
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 50px;
+  font-size: 20px;
+}
 .footer-up {
-  margin-top: 40px;
   display: flex;
   justify-content: start;
   gap: 190px;
@@ -107,7 +176,7 @@ a {
 }
 .footer-superhero {
   background-color: black;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .footer-up p {
   color: white;
@@ -168,74 +237,40 @@ h3 {
   align-items: center;
 }
 
-/* Start Main */
-main .ibt {
-  width: 400px;
-  height: 40px;
-  border: 1px solid rgba(200, 200, 200, 0.6);
-  border-radius: 5px;
-  margin-top: 10px;
-}
-main p {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-label {
-  font-size: 14px;
-}
-main button {
-  width: 400px;
-  height: 40px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-}
-.total {
+.login-first {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 180px;
+  height: 60px;
+  border-bottom: 1px solid white;
 }
-.lost {
-  font-size: 14px;
+.login-first p {
+  font-size: 12px;
+  font-weight: bold;
 }
-.tk {
-  margin-bottom: 10px;
-}
-.pass {
-  margin-bottom: 10px;
-}
-.lost {
-  font-size: 14px;
-  background-color: aqua;
-}
-.main-text {
-  text-align: center;
-  width: 400px;
-  height: 300px;
-}
-.main-over {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-}
-.text-right {
-  font-size: 15px;
-  font-weight: 300;
-}
-#test2 {
-  width: 450px;
+.login {
+  background-color: black;
+  width: 300px;
+  height: 100vh;
+  color: white;
+  padding: 0 10px;
+  position: fixed;
+  top: var(--wd-admin-bar-h);
+  bottom: 0;
+  z-index: 500;
+  overflow: hidden;
+  overflow-y: auto;
+  right: 0;
+  display: none;
 }
 .total-qty {
   position: absolute;
   top: -15px;
   left: 15px;
-  color: red;
+  color: black;
   background-color: white;
   height: 1rem;
-  width: 1rem;
+  width: 30px;
   border-radius: 50%;
   text-align: center;
   display: flex;

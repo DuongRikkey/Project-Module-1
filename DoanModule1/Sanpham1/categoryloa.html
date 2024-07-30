@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Danh mục sản phẩm</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ddvJu5q5YErqvRfZwm4QxpEGUSduPdL0NEnUZKQAq4s8aUh5rzfEZPlxbJ7qGcFX84c&usqp=CAU"
+    />
     <link rel="stylesheet" href="./cate.css" />
-    <link rel="stylesheet" href="../Doan.css" />
+    <link rel="stylesheet" href=".././doan/Doan.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +32,7 @@
           <li>
             <img
               style="width: 38px; width: 38px"
-              src="./z5618604952096_4f945234f0c313ec6ebd4090a8a78005.jpg"
+              src="../z5618604952096_4f945234f0c313ec6ebd4090a8a78005.jpg"
               alt=""
             />
             <p>
@@ -80,7 +85,7 @@
             <!-- <a href=""><i class="fa-solid fa-shuffle"></i></a>
             <a href=""><i class="fa-regular fa-heart"></i></a> -->
           </li>
-          <li>
+          <li class="cart-shopping">
             <a href="">
               <img
                 style="width: 18px; height: 18px; color: azure"
@@ -88,11 +93,7 @@
                 alt=""
               />
             </a>
-          </li>
-          <li class="nav-end">
-            <p>
-              <span style="color: white">0 đ</span>
-            </p>
+            <span class="total-qty" id="totalCart">0</span>
           </li>
           <li class="nav-flag">
             <img
@@ -119,7 +120,7 @@
         <p>Hiển thị 1–12 của 14 kết quả</p>
       </main>
       <main class="list-main" id="list-category">
-        <main class="main-product">
+        <!-- <main class="main-product">
           <img
             style="height: 55px; width: 100px"
             src="../Image/cate1.jpg"
@@ -131,7 +132,7 @@
               <span>8 product</span>
             </a>
           </p>
-        </main>
+        </main> -->
 
         <!-- <main class="main-product">
           <img
@@ -184,8 +185,8 @@
           </div>
         </div> -->
         <div class="hehe">
-          <span style="font-size: 30px; font-weight: 600; color: #242424">
-            PHỤ KIỆN MARSHALL
+          <span style="font-size: 30px; font-weight: 800; color: #242424">
+            Danh mục sản phẩm
           </span>
           <div>
             <label for="">Sắp xếp</label>
@@ -208,7 +209,7 @@
             >
               <div class="new-product">
                 <img
-                  style="width: 195px; height: 197px"
+                  style="width: 200px; height: 210px"
                   class="img-product"
                   src="../Image/ctms1.png"
                   alt=""
@@ -619,7 +620,7 @@
         </footer>
         <footer class="footer-main">
           <footer>
-            <img src="./Image/logo-ms-footer.png" alt="" />
+            <img src="../Image/logo-ms-footer.png" alt="" />
             <p style="color: #cfcdd1">
               Marshall Store Vietnam mong <br />
               muốn đem đến những sản phẩm <br />

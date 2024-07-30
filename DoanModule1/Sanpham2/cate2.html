@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="./cate.css" />
-        <link rel="stylesheet" href="./Doan.css" />
+        <link rel="stylesheet" href="../Doan.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -36,7 +36,7 @@
               <li>
                 <img
                   style="width: 38px; width: 38px"
-                  src="./z5618604952096_4f945234f0c313ec6ebd4090a8a78005.jpg"
+                  src="../z5618604952096_4f945234f0c313ec6ebd4090a8a78005.jpg"
                   alt=""
                 />
                 <p>
@@ -53,7 +53,7 @@
               </li>
 
               <li>
-                <img style="height: 45px" src="./phone.jpg" alt="" />
+                <img style="height: 45px" src="../phone.jpg" alt="" />
                 <p style="font-size: 13px">
                   0928.759.555 <br />
                   0394.678.121
@@ -63,11 +63,11 @@
           </nav>
           <!-- end navbar -->
           <!-- Star Hero -->
-          <nav class="navbar-hero">
+          <nav class="navbar-hero1">
             <ul>
               <li>
                 <a href=""
-                  ><img width="22px" height="22px" src="./home.jpg" alt=""
+                  ><img width="22px" height="22px" src="../home.jpg" alt=""
                 /></a>
               </li>
               <li><a href="">LOA MARSHALL</a></li>
@@ -79,19 +79,22 @@
             </ul>
             <ul class="nav-menur">
               <i
+                id="searchbutton"
                 style="color: white; font-size: large"
                 class="fa-solid fa-magnifying-glass"
               ></i>
+              <input type="text" name="" id="inpsearch" />
+
               <li class="test">
                 <a href=""> <i class="fa-regular fa-user"></i></a>
-                <a href=""><i class="fa-solid fa-shuffle"></i></a>
-                <a href=""><i class="fa-regular fa-heart"></i></a>
+                <!-- <a href=""><i class="fa-solid fa-shuffle"></i></a>
+                <a href=""><i class="fa-regular fa-heart"></i></a> -->
               </li>
               <li>
                 <a href="">
                   <img
                     style="width: 18px; height: 18px; color: azure"
-                    src="./icons8-shopping-cart-64.png"
+                    src="../icons8-shopping-cart-64.png"
                     alt=""
                   />
                 </a>
@@ -104,7 +107,7 @@
               <li class="nav-flag">
                 <img
                   style="width: 21px; height: 15px"
-                  src="./vietnam-flag-icon.svg"
+                  src="../vietnam-flag-icon.svg"
                   alt=""
                 />
                 <a href=""
@@ -126,10 +129,10 @@
             <p>Hiển thị 1–12 của 13 kết quả</p>
           </main>
           <main class="list-main">
-            <main class="main-product">
+            <!-- <main class="main-product">
               <img
                 style="height: 55px; width: 100px"
-                src="./Image/tn1.jpg"
+                src="../Image/tn1.jpg"
                 alt=""
               />
               <p>
@@ -138,11 +141,11 @@
                   <span>6 product</span>
                 </a>
               </p>
-            </main>
-            <main class="main-product">
+            </main> -->
+            <!-- <main class="main-product">
               <img
                 style="height: 55px; width: 100px"
-                src="./Image/fix.jpg"
+                src="../Image/fix.jpg"
                 alt=""
               />
               <p>
@@ -156,7 +159,7 @@
             <main class="main-product">
               <img
                 style="height: 55px; width: 100px"
-                src="./Image/tn2.jpg"
+                src="../Image/tn2.jpg"
                 alt=""
               />
               <p>
@@ -171,7 +174,7 @@
             <main class="main-product">
               <img
                 style="height: 55px; width: 100px"
-                src="./Image/cate3.jpg"
+                src="../Image/cate3.jpg"
                 alt=""
               />
               <p>
@@ -180,52 +183,43 @@
                   <span>3 product</span>
                 </a>
               </p>
-            </main>
+            </main> -->
           </main>
         </main>
 
         <!-- test range -->
-
-        <div class="main-superjunior">
-          <div class="filter">
-            <h3>Lọc Sản Phẩm</h3>
-            <div class="price-filter">
-              <label for="price-range">Giá</label>
-              <input
-                type="range"
-                id="price-range"
-                min="2690000"
-                max="16190000"
-                value="5000000"
-              />
-              <span id="price-value">2.690.000 ₫ - 16.190.000 ₫</span>
-              <button id="filter-button">Lọc</button>
+        <div class="total">
+          <div class="hehe">
+            <span style="font-size: 25px; font-weight: 600; color: #242424">
+              PHỤ KIỆN MARSHALL
+            </span>
+            <div>
+              <label for="">Sắp xếp</label>
+              <br />
+              <select name="" id="filter1">
+                <option value="0">Tất cả</option>
+                <option value="1">2tr -> 4tr</option>
+                <option value="2">4tr -> 8tr</option>
+                <option value="3">8tr -> 12tr</option>
+                <option value="4">12tr -> 15tr</option>
+                <option value="5">> 15tr</option>
+              </select>
             </div>
-            <!-- <div class="filter-section">
-          <h3>Diện Tích Sử Dụng</h3>
-          Add options here -->
-            <!-- </div>
-        <div class="filter-section">
-          <h3>Màu Sắc</h3> -->
-            <!-- Add options here -->
-            <!-- </div>
-        <div class="filter-section">
-          <h3>Công Suất</h3> -->
-            <!-- Add options here -->
-            <!-- </div> -->
           </div>
-
           <div class="text-prdouct-right">
-            <div class="text-hero">
-              <span style="font-size: 26px; font-weight: 600; color: #242424">
-                PHỤ KIỆN MARSHALL
-              </span>
-              <div class="total-product-cheap">
+            <div
+              class="text-hero"
+              style="display: flex; justify-content: center"
+            >
+              <div
+                class="total-product-cheap"
+                style="display: flex; flex-wrap: wrap"
+              >
                 <div class="new-product">
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn1.jpg"
+                    src="../Image/mstn1.jpg"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -258,12 +252,12 @@
                     </div>
                   </div>
                 </div>
-
+                <!-- 
                 <div class="new-product">
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn2.jpg"
+                    src="../Image/mstn2.jpg"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -303,7 +297,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn3jpg.png"
+                    src="../Image/mstn3jpg.png"
                     s
                     alt=""
                   />
@@ -344,7 +338,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn4.png"
+                    src="../Image/mstn4.png"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -381,17 +375,17 @@
                       <p class="red">HOT</p>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
 
-            <div class="text-hero">
+            <!-- <div class="text-hero">
               <div class="total-product-cheap">
                 <div class="new-product">
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn5.png"
+                    src="../Image/mstn5.png"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -431,7 +425,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn7.png"
+                    src="../Image/mstn7.png"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -471,7 +465,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn6.png"
+                    src="../Image/mstn6.png"
                     alt=""
                   />
                   <div class="text-marshall-small2">
@@ -509,7 +503,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn8.png"
+                    src="../Image/mstn8.png"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -552,7 +546,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn9.png"
+                    src="../Image/mstn9.png"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -591,7 +585,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn10.png"
+                    src="../Image/mstn10.png"
                     alt=""
                   />
                   <div class="text-marshall-small">
@@ -631,7 +625,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn11.png"
+                    src="../Image/mstn11.png"
                     alt=""
                   />
                   <div class="text-marshall-small2">
@@ -669,7 +663,7 @@
                   <img
                     style="width: 195px; height: 197px"
                     class="img-product"
-                    src="./Image/mstn12.png"
+                    src="../Image/mstn12.png"
                     alt=""
                   />
                   <div class="text-marshall-small2">
@@ -703,7 +697,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -726,7 +720,7 @@
           </footer>
           <footer class="footer-main">
             <footer>
-              <img src="./Image/logo-ms-footer.png" alt="" />
+              <img src="../Image/logo-ms-footer.png" alt="" />
               <p style="color: #cfcdd1">
                 Marshall Store Vietnam mong <br />
                 muốn đem đến những sản phẩm <br />
@@ -739,7 +733,7 @@
               <p class="sb-ft">Subscribe</p>
               <p>
                 <a href=""
-                  ><img src="./Image/icons8-facebook-50.png" alt=""
+                  ><img src="../Image/icons8-facebook-50.png" alt=""
                 /></a>
                 <a href=""
                   ><img
@@ -810,6 +804,7 @@
         import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
         polyfillCountryFlagEmojis();
       </script>
+      <script src="cate2.js"></script>
     </html>
   </body>
 </html>

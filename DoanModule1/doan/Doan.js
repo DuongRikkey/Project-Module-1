@@ -5,6 +5,30 @@ let mark1 = document.getElementById("mark1")
 let overlay = document.getElementsByClassName("overlay")
 const soundmarshall = document.getElementsByClassName("sound-marshall");
 const productcheap = document.getElementsByClassName("total-product-cheap");
+
+
+const textselect = document.getElementById("text-select")
+const textselectmain = document.getElementById("text-select-main")
+
+const totalCart = document.getElementById("totalCart")
+
+const cart = JSON.parse(localStorage.getItem("cart")) || []
+
+
+function renderCart() {
+
+  let userLogin = JSON.parse(localStorage.getItem("user-login"));
+  const cart = userLogin.cart
+  let totalProduct = cart.reduce(function (acc, cur) {
+    return (acc += cur.quantity);
+  }, 0);
+  totalCart.innerHTML = totalProduct;
+}
+renderCart()
+
+
+const iploginemail = document.getElementById("iploginemail");
+const iploginpass = document.getElementById("iploginpass")
 user.onclick = function () {
   login[0].style.display = "block"
   overlay[0].style.display = "block"
@@ -41,18 +65,19 @@ function redermodal() {
             <p>${catedb[i].productName}</p></p>
             <p class="color-ms">TAI NGHE MARSHALL, IN-EAR</p>
             <p class="Star">
-              <i class="fa-solid fa-star"" style="color: yellow;"></i>
-              <i class="fa-solid fa-star"" style="color: yellow;" ></i>
-              <i class="fa-solid fa-star"" style="color: yellow;" ></i>
-              <i class="fa-solid fa-star"" style="color: yellow;" ></i>
-              <i class="fa-solid fa-star"" style="color: yellow;" ></i>
+              <i class="fa-solid fa-star"" style="color: #eabf13;"></i>
+              <i class="fa-solid fa-star"" style="color: #eabf13;" ></i>
+              <i class="fa-solid fa-star"" style="color: #eabf13;" ></i>
+              <i class="fa-solid fa-star"" style="color: #eabf13;" ></i>
+              <i class="fa-solid fa-star"" style="color: #eabf13;" ></i>
             </p>
             <p><i class="fa-solid fa-check"></i> ${catedb[i].inventory}</p>
-            <p style="font-weight: bold;" >${catedb[i].price}  VND</p>
+            <p style="font-weight: bold;" > ${new Intl.NumberFormat("vi-VN", { style: "decimal" }).format(
+        catedb[i].price)} ₫</p>
             <p><i class="fa-solid fa-circle"></i></p>
             <p>
-              <button>
-                <a style="color: white" href="">Lựa Chọn Các Tùy Chọn</a>
+              <button id="text-select-main" >
+                <a id="text-select"  class="text-select" style="color: white" href="">Lựa Chọn Các Tùy Chọn</a>
               </button>
             </p>
           </div>
@@ -64,6 +89,17 @@ function redermodal() {
         `
   }
   soundmarshall[0].innerHTML = stringHTML
+
+
+  const textSelectElements = document.querySelectorAll('.text-select');
+  textSelectElements.forEach(element => {
+    element.addEventListener('mouseover', function () {
+      element.innerHTML = '<i class="fa-solid fa-cart-shopping"></i>';
+    });
+    element.addEventListener('mouseout', function () {
+      element.textContent = 'Lựa Chọn Các Tùy Chọn';
+    });
+  });
 }
 redermodal()
 
@@ -72,9 +108,10 @@ function renderAccount() {
   const userLogin = JSON.parse(localStorage.getItem('user-login'))
   if (userLogin) {
     document.getElementById('text-name-account').innerHTML = userLogin.fullname
+
     document.getElementById('btn-logout').style.display = "block"
   } else {
-    document.getElementById('text-name-account').innerHTML = `<button> <a href="../LoginRegister/Register.html">Login</a> </button>`
+    document.getElementById('text-name-account').innerHTML = `<button  > <a style="color: black" href="../../LoginRegister/Register.html">Login</a> </button>`
     document.getElementById('btn-logout').style.display = "none"
   }
 }

@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Order</title>
     <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ddvJu5q5YErqvRfZwm4QxpEGUSduPdL0NEnUZKQAq4s8aUh5rzfEZPlxbJ7qGcFX84c&usqp=CAU"
-    />
-    <title>List User</title>
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ddvJu5q5YErqvRfZwm4QxpEGUSduPdL0NEnUZKQAq4s8aUh5rzfEZPlxbJ7qGcFX84c&usqp=CAU"
+  />
+    
+
   </head>
   <body>
     <!DOCTYPE html>
@@ -29,7 +31,7 @@
           rel="stylesheet"
           type="text/css"
         />
-        <link rel="stylesheet" href="./user.css" />
+        <link rel="stylesheet" href="./listorder.css" />
         <style></style>
       </head>
       <a href="../../LoginRegister/Register.html"></a>
@@ -70,10 +72,10 @@
                   <a href="../manage-product/product.html">
                     <span>Product</span>
                   </a>
-                  <a style="background-color: palevioletred" href="./user.html">
+                  <a  href="../manage-user/user.html">
                     <span>User List</span>
                   </a>
-                  <a href="../manage-tablelistoder/listoder.html">
+                  <a style="background-color: palevioletred" href="./listoder.html">
                     <span>List Order</span>
                   </a>
                 </li>
@@ -90,7 +92,7 @@
               <!-- bảng, form thêm, tìm kiếm<input>, sắp xếp<select-option> -->
 
               <section class="container-product">
-                <h1 style="text-align: center">User List</h1>
+                <h1 style="text-align: center">Table List Oder</h1>
                 <div class="form-input" style="display: flex">
                   <div>
                     <div class="search-total">
@@ -110,36 +112,60 @@
                     </div>
                     <p id="error1"></p>
                   </div>
-                  <div>
-                    <label for="">Sắp xếp</label>
+                  <section>
+                    <label for="">Sort</label>
                     <select name="" id="sortall">
-                      <option value="bandan">Ban Đầu</option>
+                      <option value="bandau">Ban đầu</option>
                       <option value="tangdan">Tăng dần</option>
-                      <option value="giamdan">Giảm dần</option>
+                      <option value="giamdan">Giam dần</option>
                     </select>
-                  </div>
                 </div>
 
                 <table>
                   <thead>
                     <tr id="list-newp">
-                      <th>ID</th>
-                      <th>Fullname</th>
-                      <th>Phone</th>
+            
+                      <th>UserId</th>
+                      <th>Name</th>
+                      <th>Address</th>
                       <th>Email</th>
-                      <th>Password</th>
-                      <th>Stattus</th>
-                      <th>Role</th>
+                      <th>Phone</th>
+                      <th>Note</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                     
+                      <th>TotalPrice</th>
+                      <th>Details </th>
                       <th>Action</th>
+
                     </tr>
                   </thead>
-                  <tbody id="list-category"></tbody>
+                  <tbody id="list-category">
+                    <!-- <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <button>Chấp nhận</button>
+                        <button>Xóa</button>
+                      </td>
+                    </tr> -->
+                  </tbody>
                 </table>
                 <div class="pagination" id="pagination-user"></div>
               </section>
             </div>
           </div>
         </div>
+      
       </body>
       <script src="./user.js"></script>
       <script
@@ -151,5 +177,6 @@
         crossorigin="anonymous"
       ></script>
     </html>
+    <script src="./listoder.js"></script>
   </body>
 </html>

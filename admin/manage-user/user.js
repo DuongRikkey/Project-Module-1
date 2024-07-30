@@ -3,6 +3,7 @@ const searchuser = document.getElementById("searchuser");
 const listcategory = document.getElementById("list-category");
 const sortall = document.getElementById("sortall");
 const logout = document.getElementById("logout");
+const welcome = document.getElementById("welcome");
 
 
 let totalPage = 1
@@ -29,7 +30,7 @@ function Renderuser() {
     //Timf kiem
     let dbuser = JSON.parse(localStorage.getItem("users")) || []
     dbuser = dbuser.filter((el) => el.fullname.toLowerCase().includes(searchuser.value.trim().toLowerCase()))
-    
+
     // -------------------------------------
     // sap xep be lon
     switch (sortall.value) {
@@ -43,7 +44,7 @@ function Renderuser() {
         case `giamdan`:
             dbuser.sort((a, b) => b.fullname.localeCompare(a.fullname))
             break;
-    } 
+    }
 
 
 
@@ -134,8 +135,26 @@ function changeStatus(idcandoi) {
     // render
     Renderuser()
 }
+// Đăng nhập
+function renderAccount() {
+    const userLogin = JSON.parse(localStorage.getItem("admin-login"))
+    if (userLogin) {
+        document.getElementById("login").innerHTML = userLogin.fullname
+        document.getElementById("btn-logout").style.display = "block"
+        welcome.innerHTML = "Chào mừng bạn đã quay trở lại !!!"
+        welcome.style.fontSize = "15px"
+    }
+    else {
+        document.getElementById("login").innerHTML = `<button> <a href="../../LoginRegister/Register.html">Login</a> </button>`
+        document.getElementById("btn-logout").style.display = "none"
+        welcome.innerHTML = ""
+    }
+}
+renderAccount()
+//Đăng xuất
 
-logout.onclick = function () {
-    localStorage.removeItem('admin-login')
-    window.location.href = "../../LoginRegister/Register.html"
+document.getElementById("btn-logout").onclick = function () {
+    localStorage.removeItem("admin-login")
+    renderAccount()
+    welcome.innerHTML = ""
 }

@@ -50,6 +50,9 @@ a {
   font-size: 18px;
   color: #333333;
 }
+.test {
+  display: flex;
+}
 .test i {
   font-size: 30px;
   padding: 14px 14px;
@@ -68,7 +71,7 @@ a {
   background-color: black;
   height: 60px;
   padding: 0 70px;
-  gap: 320px;
+  gap: 100px;
 }
 .navbar-hero :nth-child(1) {
   display: flex;
@@ -78,7 +81,7 @@ a {
 .navbar-hero :nth-child(2) {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 .nav-end {
   display: flex;
@@ -99,7 +102,7 @@ a {
 /* Start Main */
 .main-first {
   display: flex;
-  background: url(./321695087_1139958723381541_1129897740931076936_n.jpg);
+  background: url(../321695087_1139958723381541_1129897740931076936_n.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -833,7 +836,6 @@ h3 {
   box-shadow: -11px 14px 105px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -11px 14px 105px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -11px 14px 105px 0px rgba(0, 0, 0, 0.75);
-  
 }
 .checkbox {
   display: flex;
@@ -863,69 +865,28 @@ h3 {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(45deg);
+    transform: rotate(15deg);
   }
 }
 .fig-img {
   animation: rotateImage 10s linear infinite;
 }
-/* 
-@media only screen and (min-width: 724px) and (max-width: 1024px) {
-  .navbar-text {
-    visibility: hidden;
-    background-color: #448d44;
-  }
-  body {
-    background-color: lightblue;
-  }
-  .navbar-list-items :nth-child(1) .logo-main {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .nav-hot {
-    margin-left: 120px;
-  }
-  .navbar-list-items {
-    height: 70px;
-  }
-  .search-nav1 {
-    visibility: visible;
-    color: #448d44;
-  }
-  .sound-marshall {
-    flex-direction: column;
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-  }
-  .sound-marshall .list-marshall {
-    width: 300px;
-  }
-  .image-total {
-    flex-direction: column;
-  }
-  .img-nen {
-    height: 1700px;
-  }
-  .smart-ms {
-    padding: 8px 10px;
-    display: flex;
-    align-items: end;
-    text-align: end;
-  }
-  .new-product {
-    height: 470px;
-  }
-  .text-img1 {
-    margin: auto;
-  }
-  .text-hero {
-    flex-direction: column;
-  }
-  .new-productms {
-    text-align: center;
-  }
-  .all {
-    visibility: hidden;
-  }
-} */
+#text-select {
+  transition: all 0.3s ease;
+}
+.total-qty {
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  color: black;
+  background-color: white;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.cart-shopping {
+  position: relative;
+}

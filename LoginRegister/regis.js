@@ -23,6 +23,16 @@ let error5 = document.getElementById("error5");
 let iploginemail = document.getElementById("iploginemail");
 let iploginpass = document.getElementById("iploginpass");
 
+// function renderCart() {
+
+//     let userLogin = JSON.parse(localStorage.getItem("user-login"));
+//     const cart = userLogin.cart
+//     let totalProduct = cart.reduce(function (acc, cur) {
+//         return (acc += cur.quantity);
+//     }, 0);
+//     totalCart.innerHTML = totalProduct;
+// }
+// renderCart()
 
 btn.onclick = function () {
     if (clickCount % 2 === 0) {
@@ -143,7 +153,7 @@ register.onclick = function () {
     if (registerdb.length > 0) {
         id = registerdb[registerdb.length - 1].id + 1;
     }
-    const overview = {
+    const Total = {
         id: id,
         fullname: registername,
         phone: registerphone,
@@ -152,10 +162,9 @@ register.onclick = function () {
         role: 0,
         status: true,
         cart: [],
-    };
-
-    registerdb.push(overview);
-    localStorage.setItem("users", JSON.stringify(registerdb));
+    }
+    registerdb.push(Total);
+    localStorage.setItem("users", JSON.stringify(registerdb))
 
     inputname.value = "";
     inputemail.value = "";
@@ -215,10 +224,38 @@ login.onclick = function () {
     if (userFind.role == 0) {
         localStorage.setItem("user-login", JSON.stringify(userFind));
         alert("Thành công")
-        window.location.href = "../DoanModule1/Doan.html"
+        window.location.href = "../DoanModule1/doan/Doan.html"
     } else {
         localStorage.setItem("admin-login", JSON.stringify(userFind));
         window.location.href = "../admin/manage-user/user.html"
     }
 
 };
+
+function renderAccount() {
+    const userLogin = JSON.parse(localStorage.getItem('user-login'))
+    if (userLogin) {
+        document.getElementById('text-name-account').innerHTML = userLogin.fullname
+
+        document.getElementById('btn-logout').style.display = "block"
+    } else {
+        document.getElementById('text-name-account').innerHTML = `<button  > <a style="color: black" href="../../LoginRegister/Register.html">Login</a> </button>`
+        document.getElementById('btn-logout').style.display = "none"
+    }
+}
+renderAccount()
+
+document.getElementById('btn-logout').onclick = function () {
+    localStorage.removeItem('user-login')
+    renderAccount()
+}
+function renderCart() {
+
+    let userLogin = JSON.parse(localStorage.getItem("user-login"));
+    const cart = userLogin.cart
+    let totalProduct = cart.reduce(function (acc, cur) {
+        return (acc += cur.quantity);
+    }, 0);
+    totalCart.innerHTML = totalProduct;
+}
+renderCart()

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng ký/ Đăng nhập</title>
-    <link rel="stylesheet" href="./regis.css" />
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="./chitietsp.css" />
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -12,6 +12,7 @@
     />
   </head>
   <body>
+    <div class="overlay"></div>
     <header>
       <!-- Start navbar -->
       <nav class="navbar-list">
@@ -19,7 +20,7 @@
           <li>
             <img
               style="width: 38px; width: 38px"
-              src="../z5618604952096_4f945234f0c313ec6ebd4090a8a78005.jpg"
+              src="./z5618604952096_4f945234f0c313ec6ebd4090a8a78005.jpg"
               alt=""
             />
             <p class="navbar-text">
@@ -43,7 +44,7 @@
                 class="fa-solid fa-magnifying-glass"
               ></i>
             </div>
-            <img style="height: 45px" src="../phone.jpg" alt="" />
+            <img style="height: 45px" src="../DoanModule1/phone.jpg" alt="" />
             <p style="font-size: 13px">
               0928.759.555 <br />
               0394.678.121
@@ -56,7 +57,7 @@
       <nav class="navbar-hero">
         <ul>
           <li>
-            <a href="../DoanModule1/doan/Doan.html"
+            <a href=""
               ><img
                 width="22px"
                 height="22px"
@@ -81,9 +82,9 @@
           <input type="text" name="" id="" />
           <li class="test">
             <i id="user" class="fa-regular fa-user"></i>
+            <span id="text-name-account" style="color: white"></span>
           </li>
-          <span id="text-name-account" style="color: white; width: 30px"></span>
-          <li class="cart-shopping" style="margin-left: 30px">
+          <li class="cart-shopping">
             <a href="../thanhtoan/thanhtoan.html">
               <img
                 style="width: 18px; height: 18px; color: azure"
@@ -98,10 +99,16 @@
               >
             </a>
           </li>
+
+          <li class="nav-end">
+            <p>
+              <span style="color: white">0 đ</span>
+            </p>
+          </li>
           <li class="nav-flag">
             <img
               style="width: 21px; height: 15px"
-              src=".././DoanModule1/vietnam-flag-icon.png"
+              src="../DoanModule1/vietnam-flag-icon.svg"
               alt=""
             />
             <a href=""
@@ -120,100 +127,84 @@
       </nav>
       <!-- End Hero -->
     </header>
-    <main class="main-over">
-      <main>
-        <main id="test1" style="display: none">
-          <p>Đăng Nhập</p>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Tên tài khoản hoặc địa chỉ email
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input id="iploginemail" class="ibt" type="email" required />
-          </div>
-          <div class="pass">
-            <label for="">Password <span style="color: red"> *</span> </label>
-            <br />
-            <input id="iploginpass" class="ibt" type="password" required />
-          </div>
-          <button id="login">Login</button>
-          <div class="total">
-            <div>
-              <input type="checkbox" />
-              <label for="">Remember</label>
-            </div>
-            <div class="Lost" style="font-size: 14px">Lost your password?</div>
-          </div>
-        </main>
-        <main id="test2">
-          <a href="./"></a>
-          <p>Đăng Ký</p>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Họ và tên
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputname" type="email" required />
-            <p id="error1"></p>
-          </div>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Địa chỉ email
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputemail" type="email" required />
-            <p id="error2"></p>
-          </div>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Phone Number
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputphone" type="tel" required />
-            <p id="error3"></p>
-          </div>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Password
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputpass" type="password" required />
-            <p id="error4"></p>
-          </div>
 
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Password Confirmation
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input id="inputpassconfirm" class="ibt" type="password" required />
-            <p id="error5"></p>
+    <div class="container">
+      <h1 id="name-product" class="product-title">MARSHALL MAJOR 4</h1>
+      <div class="rating"><span>★★★★★</span> (237 đánh giá của khách hàng)</div>
+      <div class="product-info">
+        <div class="thumbnail-images">
+          <img style="width: 500px" id="imageid" src="" alt="Thumbnail 1" />
+        </div>
+        <div class="product-details">
+          <p class="price">
+            <span id="newprice" class="new-price">2.990.000 ₫</span>
+          </p>
+          <div class="colors">
+            <span>Màu:</span>
+            <button class="color-btn black"></button>
+            <button class="color-btn brown"></button>
           </div>
-          <div>
-            <input type="checkbox" id="terms" />
-            <label for="">i agree to the terms and conditions</label>
+          <div class="version">
+            <span>Phiên bản:</span>
+            <button class="version-btn selected">NEW ASH</button>
+            <button class="version-btn">NEW US</button>
           </div>
-
-          <button id="register">Đăng ký</button>
-        </main>
-      </main>
-      <main class="main-text">
-        <h3 style="font-size: 40px; color: black">Login</h3>
-        <p class="text-right">
-          Registering for this site allows you to access your order status and
-          history. Just fill in the fields below, and we'll get a new account
-          set up for you in no time. We will only ask you for information
-          necessary to make the purchase process faster and easier.
+          <div class="quantity">
+            <button class="quantity-btn" id="btn-minus">-</button>
+            <input
+              type="number"
+              value="1"
+              class="quantity-input"
+              id="input-quantity"
+            />
+            <button class="quantity-btn" id="btn-plus">+</button>
+          </div>
+          <div class="actions">
+            <button id="btn-add-to-cart" class="add-to-cart">
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+          <p id="error-message" style="color: red"></p>
+        </div>
+      </div>
+      <div class="store-info">
+        <p>Trải nghiệm sản phẩm tại Store HN & HCM</p>
+        <p>Hà Nội: 11 Đường Ven Sông Lừ, Kim Liên, Đống Đa, HN</p>
+        <p>Hồ Chí Minh: 62 Hoa Cau, Phường 7, Phú Nhuận, TP.HCM</p>
+        <p>HN: 0928 759 555 / HCM: 0394 678 121</p>
+        <p>
+          Lưu ý: Đây là Website duy nhất và không có bất kỳ "CHƯƠNG TRÌNH" giảm
+          giá 70-75% nào đã & đang được diễn ra
         </p>
-        <button id="btn">Đăng nhập</button>
-      </main>
-    </main>
+      </div>
+    </div>
+
+    <aside class="ironman">
+      <h2>Thông số âm thanh</h2>
+      <p><strong>Thương hiệu:</strong> Marshall (Anh Quốc)</p>
+      <p><strong>Màu:</strong> Black, Brown</p>
+      <p><strong>Tần số:</strong> 20-20.000 Hz</p>
+      <p><strong>Ứng dụng hỗ trợ:</strong> Không hỗ trợ kết nối APP</p>
+    </aside>
+
+    <aside class="batman">
+      <h2>Kiểm soát và kết nối</h2>
+      <p><strong>Kết nối không dây:</strong> Bluetooth 5.0</p>
+      <p>
+        <strong>Pin:</strong> Pin Li-ion tích hợp, có thể sạc lại, Sạc không dây
+      </p>
+      <p>
+        <strong>Thời gian sạc:</strong> 15 phút sạc cho 15 giờ chơi nhạc không
+        dây, 3 giờ sạc đầy
+      </p>
+      <p><strong>Thời lượng Pin:</strong> 80 giờ sử dụng Bluetooth</p>
+      <p><strong>Kết nối có dây:</strong> AUX</p>
+    </aside>
+
+    <aside class="superman">
+      <h2>Kích thước</h2>
+      <p><strong>Trọng lượng:</strong> 165g</p>
+    </aside>
 
     <footer class="footer-superhero">
       <footer class="footer-up">
@@ -245,31 +236,29 @@
           </p>
           <p class="sb-ft">Subscribe</p>
           <p>
-            <a href=""><img src="../Image/icons8-facebook-50.png" alt="" /></a>
+            <a href=""><img src="./Image/icons8-facebook-50.png" alt="" /></a>
             <a href=""
               ><img
                 style="scale: 1.4"
-                src="../Image/icons8-twitter-circled-50.png"
+                src="./Image/icons8-twitter-circled-50.png"
                 alt=""
             /></a>
             <a href=""
-              ><img src="../Image/icons8-pinterest-logo-50.png" alt=""
+              ><img src="./Image/icons8-pinterest-logo-50.png" alt=""
             /></a>
             <a href=""
-              ><img src="../Image/icons8-linkedin-logo-50.png" alt=""
+              ><img src="./Image/icons8-linkedin-logo-50.png" alt=""
             /></a>
-            <a href=""><img src="../Image/icons8-telegram-50.png" alt="" /></a>
+            <a href=""><img src="./Image/icons8-telegram-50.png" alt="" /></a>
           </p>
         </footer>
         <footer class="ft-right">
           <ul>
-            <a href="">
-              <li><h3>Categories</h3></li></a
-            >
-            <a href=""> <li>Portable Speakers</li></a>
-            <a href=""><li>Home Speakers</li></a>
-            <a href=""> <li>Headphones</li></a>
-            <a href=""> <li>Phụ kiện Marshall</li> </a>
+            <li><h3>Categories</h3></li>
+            <li>Portable Speakers</li>
+            <li>Home Speakers</li>
+            <li>Headphones</li>
+            <li>Phụ kiện Marshall</li>
           </ul>
           <ul>
             <li><h3>Useful Links</h3></li>
@@ -311,10 +300,5 @@
     src="https://kit.fontawesome.com/d214b8e9b3.js"
     crossorigin="anonymous"
   ></script>
-  <script
-    src="https://kit.fontawesome.com/d214b8e9b3.js"
-    crossorigin="anonymous"
-  ></script>
-
-  <script src="./regis.js"></script>
+  <script src="./chitietsp.js"></script>
 </html>

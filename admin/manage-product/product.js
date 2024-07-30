@@ -13,9 +13,11 @@ let paginationProduct = document.getElementById("pagination-product");
 let error = document.getElementById("error");
 
 let idUpdateGlobal = "add";
+//Chế độ thêm mới hoặc cập nhật sản phẩm
 let idUd = 0;
+// ID sản phẩm hiện tại cập nhật
 let imageBase64 = null //b1image
-
+//Biến lưu trữ ảnh sản phẩm dưới dạng Base 64
 const nameiput = document.getElementById("nameiput")
 const priceinput = document.getElementById("priceinput")
 const inventoryinput = document.getElementById("inventoryinput")
@@ -31,57 +33,70 @@ let pagesize = 5
 // btnSearch.onclick=function(){
 //     const dbCategory=localStorage.getItem("")
 // }
+//Mở đóng Form nhập liệu
 createbtn[0].onclick = function () {
     overlay.style.display = "block"
+    //Hiển thị overlay
     newproduct.style.display = "block"
+    //Hiển thị form thêm sản phẩm
 }
 cancel.onclick = function () {
     overlay.style.display = "none"
+    // An
     newproduct.style.display = "none"
 }
 
 // createbtn[0].onclick = function(){
 
 // }
+
 let stringproduct = "";
+//Biến lưu trữ danh sách danh mục sản phẩm
 function renderProduct() {
     const dbrenderProduct = JSON.parse(localStorage.getItem("categories"));
+    //Lấy danh mục từ Local
     for (i = 0; i < dbrenderProduct.length; i++) {
         stringproduct +=
             ` <option value=${dbrenderProduct[i].id}>${dbrenderProduct[i].name}</option >`
     }
     listproduct[0].innerHTML = stringproduct;
+    //Hiển thị danh mục sản phẩm
 
     // filterCategory.innerHTML = `<option value="0">Tất cả</option>` + stringproduct // Lọc category từ select
     filterCategory.innerHTML = `<option value="0">Tất cả</option> ` + stringproduct
 
 }
 renderProduct()
+//Gọi hàm renđer danh mục sản pẩm
 
 //Thêm ảnh
 function encodeImageFileAsURL(element) {
-    const file = element.files[0];
-    const reader = new FileReader();
+    const file = element.files[0]; //Lấy file từ input
+    const reader = new FileReader(); //tạo đối tượng filereader
 
     reader.onloadend = function () {
         document.getElementById('image-product').src = reader.result //B2
-        imageBase64 = reader.result //B2 imgage
+        imageBase64 = reader.result //B2 imgage //Lưu ảnh dưới dạng base64
     }
 
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file); // Đọc file dưới dạng Data Url
 }
 
-
+//Thêm hoặc cập nhật sản phẩm
 creat.onclick = function () {
     const nameproduct = nameiput.value.trim()
+    //lấy sản phẩm từ ô input từ bỏ khoảng trống
     const productdb = JSON.parse(localStorage.getItem("product")) || []
+    //lấy sản phẩm từ Localstorage
 
+    //Kiểm tra nếu tên sản phẩm trống
     if (!nameproduct) {
-        error.innerHTML = "Không được để trống"
-        error.style.color = "red"
+        error.innerHTML = "Không được để trống" //Hiển thị thông báo lỗi
+        error.style.color = "red" //Đổi màu chữ lỗi
         return;
 
     }
+    //KiỂM TRA SẢN PHẨM ĐÃ TỒN TẠI CHƯA
     const vitri = productdb.findIndex((element) => {
         return element.productName.toLowerCase() === nameproduct.toLowerCase()
     })
@@ -90,14 +105,16 @@ creat.onclick = function () {
     if (vitri !== -1 && productdb[vitri].id !== idUd) {
         console.log(vitri !== -1 && productdb[vitri].id !== idUd);
 
-        return;
+        return;//Nếu đã sản phẩm đã tồn tại và không phải sản phẩm hiện tại
     }
 
-    let id = 1;
+    let id = 1;//ID mặc định
     if (productdb.length > 0) {
         id = productdb[productdb.length - 1].id + 1
+        //Tạo ID mới cho sản phẩm
     }
     if (idUpdateGlobal == "add") {
+        //Thêm sản phẩm mới
         const smart = {
             id: id,
             productName: nameiput.value,
@@ -106,14 +123,16 @@ creat.onclick = function () {
             categoryId: +inputcate.value,
             inventory: inventoryinput.value
         };
-        productdb.push(smart)
+        productdb.push(smart) // Thêm sản phẩm vào danh sách
         localStorage.setItem("product", JSON.stringify(productdb));
-        imageBase64 = null
-        overlay.style.display = "none";
-        newproduct.style.display = "none";
+        //Lưu danh sách sản phẩm vào local
+        imageBase64 = null //Xóa ánh
+        overlay.style.display = "none"; //Ân overlay
+        newproduct.style.display = "none";//An form theo sản phẩm
 
 
     } else {
+        //Cập nhật sản phẩm hiện tại
         let idUpdateGlobalindex = productdb.findIndex(e => e.id === idUd)
         productdb[idUpdateGlobalindex].productName = nameiput.value;
         productdb[idUpdateGlobalindex].price = priceinput.value;
@@ -121,6 +140,7 @@ creat.onclick = function () {
         productdb[idUpdateGlobalindex].image = imageBase64;
         productdb[idUpdateGlobalindex].inventory = inventoryinput.value;
         localStorage.setItem("product", JSON.stringify(productdb))
+        //Lưu danh sách và cập nhật Localstorage
         nameiput.value = ""
         priceinput.value = ""
         document.getElementById("nameiput").value = "";
@@ -134,22 +154,24 @@ creat.onclick = function () {
         imageBase64 = null //b4 image
     }
 
-    renderSkills();
+    // renderSkills(); Render lại danh sách sản phẩm
 }
 //xong
 function renderSkills() {
     let productdb = JSON.parse(localStorage.getItem("product")) || []
+    //Lấy danh sách sp từ local Storage
     const categorydb = JSON.parse(localStorage.getItem("categories")) || []
-
+    //Lấy danh mục phẩm từ local
     productdb = productdb.filter((el) => el.productName.toLowerCase().includes(inputSearch.value.trim().toLowerCase()))
-    console.log(productdb.filter((el) => el.productName.toLowerCase().includes(inputSearch.value.trim().toLowerCase())));
+    // lOc tên từ Input xem trùng khônng
 
     // phân loại loa theo ID truyền vào từ category
+    //Lọc theo danh mục
     if (+filterCategory.value !== 0) {
         productdb = productdb.filter((el) => el.categoryId === +filterCategory.value)
     }
 
-
+    //Lọc theo giá
     switch (filterPrice.value) {
         case '0':
             break;
@@ -175,7 +197,7 @@ function renderSkills() {
     let end = start + pagesize
 
     productdb = productdb.slice(start, end)
-
+    // tăng dần giảm dần theo name
     switch (sortall.value) {
         case `bandau`:
             break;
@@ -303,3 +325,25 @@ function clickPage(status) {
     renderSkills()
 }
 //Phan trang
+function renderAccount() {
+    const userLogin = JSON.parse(localStorage.getItem("admin-login"))
+    if (userLogin) {
+        document.getElementById("login").innerHTML = userLogin.fullname
+        document.getElementById("btn-logout").style.display = "block"
+        // welcome.innerHTML = "Chào mừng bạn đã quay trở lại !!!"
+        // welcome.style.fontSize = "15px"
+    }
+    else {
+        document.getElementById("login").innerHTML = `<button> <a href="../../LoginRegister/Register.html">Login</a> </button>`
+        document.getElementById("btn-logout").style.display = "none"
+        // welcome.innerHTML = ""
+    }
+}
+renderAccount()
+//Đăng xuất
+
+document.getElementById("btn-logout").onclick = function () {
+    localStorage.removeItem("admin-login")
+    renderAccount()
+    // welcome.innerHTML = ""
+}

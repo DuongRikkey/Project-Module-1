@@ -193,16 +193,18 @@ th {
 }
 .form-input {
   line-height: 30px;
+  justify-content: space-between;
+  align-items: center;
 }
 .form-input input {
-  width: 100%;
+  width: 65%;
   padding: 5px 0 0 0;
   border-radius: 7px;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 /* .button {
-    text-align: center;
-  } */
+        text-align: center;
+      } */
 .button {
   text-align: end;
 }
@@ -261,6 +263,36 @@ th {
 }
 textarea {
   width: 100%;
+}
+
+.blackpink {
+  background-color: yellow !important;
+}
+.blackpink2 {
+  background-color: #b3b3b3 !important;
+}
+#navbar-right-top {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-left: 1100px;
+}
+#nav-main {
+  align-items: center;
+  gap: 300px;
+}
+#navbar-right-top #login {
+  font-size: 35px;
+}
+#btn-logout {
+  font-size: 40px;
+}
+.search-total {
+  display: flex;
+  align-items: center;
+}
+#searchuser {
+  width: 250px;
 }
 .blackpink {
   background-color: red !important;

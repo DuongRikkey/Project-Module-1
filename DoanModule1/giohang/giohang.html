@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng ký/ Đăng nhập</title>
-    <link rel="stylesheet" href="./regis.css" />
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="./giohang.css" />
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -56,17 +56,11 @@
       <nav class="navbar-hero">
         <ul>
           <li>
-            <a href="../DoanModule1/doan/Doan.html"
-              ><img
-                width="22px"
-                height="22px"
-                src="../DoanModule1/home.jpg"
-                alt=""
+            <a href="../doan/Doan.html"
+              ><img width="22px" height="22px" src="../home.jpg" alt=""
             /></a>
           </li>
-          <li>
-            <a href="../DoanModule1/Sanpham1/categoryloa.html">LOA MARSHALL</a>
-          </li>
+          <li><a href="../Sanpham1/categoryloa.html">LOA MARSHALL</a></li>
           <li><a href="">PHỤ KIỆN MARSHALL</a></li>
           <li><a href="">TAI NGHE MARSHALL </a></li>
           <li><a href="">BLOG</a></li>
@@ -81,27 +75,25 @@
           <input type="text" name="" id="" />
           <li class="test">
             <i id="user" class="fa-regular fa-user"></i>
+            <span id="text-name-account" style="color: white"></span>
           </li>
-          <span id="text-name-account" style="color: white; width: 30px"></span>
-          <li class="cart-shopping" style="margin-left: 30px">
-            <a href="../thanhtoan/thanhtoan.html">
+          <li class="cart-shopping">
+            <a href="../../thanhtoan/thanhtoan.html">
               <img
                 style="width: 18px; height: 18px; color: azure"
-                src="../DoanModule1/icons8-shopping-cart-64.png"
+                src="../icons8-shopping-cart-64.png"
                 alt=""
               />
-              <span
-                class="total-qty"
-                id="totalCart"
-                style="color: black; width: 30px"
+              <span class="total-qty" id="totalCart" style="width: 30px"
                 >0</span
               >
             </a>
           </li>
+
           <li class="nav-flag">
             <img
               style="width: 21px; height: 15px"
-              src=".././DoanModule1/vietnam-flag-icon.png"
+              src="../vietnam-flag-icon.svg"
               alt=""
             />
             <a href=""
@@ -120,100 +112,79 @@
       </nav>
       <!-- End Hero -->
     </header>
-    <main class="main-over">
-      <main>
-        <main id="test1" style="display: none">
-          <p>Đăng Nhập</p>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Tên tài khoản hoặc địa chỉ email
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input id="iploginemail" class="ibt" type="email" required />
-          </div>
-          <div class="pass">
-            <label for="">Password <span style="color: red"> *</span> </label>
-            <br />
-            <input id="iploginpass" class="ibt" type="password" required />
-          </div>
-          <button id="login">Login</button>
-          <div class="total">
-            <div>
-              <input type="checkbox" />
-              <label for="">Remember</label>
-            </div>
-            <div class="Lost" style="font-size: 14px">Lost your password?</div>
-          </div>
-        </main>
-        <main id="test2">
-          <a href="./"></a>
-          <p>Đăng Ký</p>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Họ và tên
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputname" type="email" required />
-            <p id="error1"></p>
-          </div>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Địa chỉ email
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputemail" type="email" required />
-            <p id="error2"></p>
-          </div>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Phone Number
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputphone" type="tel" required />
-            <p id="error3"></p>
-          </div>
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Password
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input class="ibt" id="inputpass" type="password" required />
-            <p id="error4"></p>
+    <div class="container">
+      <div class="billing-details">
+        <h2>Billing Details</h2>
+        <form>
+          <label for="name">Tên *</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="address">Địa chỉ *</label>
+          <input type="text" id="address" name="address" required />
+
+          <label for="phone">Số điện thoại *</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <!-- <label for="country">Quốc gia/Khu vực *</label>
+          <select id="country" name="country" required>
+            <option value="Vietnam">Việt Nam</option>
+          </select> -->
+
+          <label for="email">Địa chỉ email *</label>
+          <input type="email" id="email" name="email" required />
+
+          <!-- <label for="">Phương thức thanh toán</label>
+          <select name="" id="">
+            <option value="">Nhận tiền khi giao hàng</option>
+            <option value="">Qua thẻ tín dụng</option>
+          </select> -->
+
+          <label for="order-notes">Ghi chú đơn hàng (tùy chọn)</label>
+          <textarea
+            id="order-notes"
+            name="order-notes"
+            placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."
+          ></textarea>
+        </form>
+      </div>
+
+      <div class="order-details">
+        <h2>Your Order</h2>
+        <div class="order-summary">
+          <div class="product">
+            <p>SẢN PHẨM</p>
+            <p>Số lượng</p>
+            <p>TẠM TÍNH</p>
           </div>
 
-          <div class="tk">
-            <label style="margin-bottom: 10px" for=""
-              >Password Confirmation
-              <span style="color: red">*</span>
-            </label>
-            <br />
-            <input id="inputpassconfirm" class="ibt" type="password" required />
-            <p id="error5"></p>
+          <div id="product-oder" class="product" style="display: block">
+            <!-- <div
+              style="width: 100%; display: flex; justify-content: space-between"
+            >
+              <p>MARSHALL MINOR IV</p>
+              <p>10</p>
+              <p>3.690.000 đ</p>
+            </div> -->
+          </div>
+
+          <div class="subtotal">
+            <p>Tạm tính</p>
+            <p id="total-demo">11.580.000 đ</p>
+          </div>
+          <div class="shipping">
+            <p>Giao hàng</p>
+            <p>Tính phí theo đơn vị vận chuyển</p>
+          </div>
+          <div class="total">
+            <p>Tổng</p>
+            <p id="total">11.580.000 đ</p>
           </div>
           <div>
-            <input type="checkbox" id="terms" />
-            <label for="">i agree to the terms and conditions</label>
+            <button type="button" id="creat-product">Tạo đơn hàng</button>
           </div>
-
-          <button id="register">Đăng ký</button>
-        </main>
-      </main>
-      <main class="main-text">
-        <h3 style="font-size: 40px; color: black">Login</h3>
-        <p class="text-right">
-          Registering for this site allows you to access your order status and
-          history. Just fill in the fields below, and we'll get a new account
-          set up for you in no time. We will only ask you for information
-          necessary to make the purchase process faster and easier.
-        </p>
-        <button id="btn">Đăng nhập</button>
-      </main>
-    </main>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer-superhero">
       <footer class="footer-up">
@@ -234,7 +205,7 @@
       </footer>
       <footer class="footer-main">
         <footer>
-          <img src="../Image/logo-ms-footer.png" alt="" />
+          <img src="./Image/logo-ms-footer.png" alt="" />
           <p style="color: #cfcdd1">
             Marshall Store Vietnam mong <br />
             muốn đem đến những sản phẩm <br />
@@ -245,20 +216,20 @@
           </p>
           <p class="sb-ft">Subscribe</p>
           <p>
-            <a href=""><img src="../Image/icons8-facebook-50.png" alt="" /></a>
+            <a href=""><img src="./Image/icons8-facebook-50.png" alt="" /></a>
             <a href=""
               ><img
                 style="scale: 1.4"
-                src="../Image/icons8-twitter-circled-50.png"
+                src="./Image/icons8-twitter-circled-50.png"
                 alt=""
             /></a>
             <a href=""
-              ><img src="../Image/icons8-pinterest-logo-50.png" alt=""
+              ><img src="./Image/icons8-pinterest-logo-50.png" alt=""
             /></a>
             <a href=""
-              ><img src="../Image/icons8-linkedin-logo-50.png" alt=""
+              ><img src="./Image/icons8-linkedin-logo-50.png" alt=""
             /></a>
-            <a href=""><img src="../Image/icons8-telegram-50.png" alt="" /></a>
+            <a href=""><img src="./Image/icons8-telegram-50.png" alt="" /></a>
           </p>
         </footer>
         <footer class="ft-right">
@@ -298,23 +269,51 @@
         <div>
           <p class="hine">
             Marshall Store Vietnam
-            <img src="./Image/icons8-c-24 (1).png" alt="" /> 2023
+            <img src="../Image/icons8-c-24 (1).png" alt="" /> 2023
           </p>
         </div>
         <div>
-          <img src="./Image/2023.png" alt="" />
+          <img src="../Image/2023.png" alt="" />
         </div>
       </footer>
     </footer>
+
+    <div id="login" class="login" style="background-color: black">
+      <div class="login-first">
+        <p>Sign in</p>
+        <p><i id="mark1" class="fa-solid fa-xmark"></i> Close</p>
+      </div>
+      <div class="login-auth">
+        <label for=""
+          >Tên tài khoản địa chỉ email <span style="color: red">*</span></label
+        >
+        <br />
+        <input class="ip" type="text" name="" id="iploginemail" required />
+        <br />
+        <label for="">Password<span style="color: red">*</span></label>
+        <br />
+
+        <input class="ip" type="text" name="" id="iploginpass" required />
+        <br />
+        <button>Log In</button>
+      </div>
+      <div class="check">
+        <div class="checkbox">
+          <input type="checkbox" />
+          <span style="font-size: 12px">Remember me</span>
+        </div>
+        <a style="font-size: 12px" href="">Lost your Password</a>
+      </div>
+      <div class="icon-reg">
+        <i id="mark" class="fa-regular fa-user" style="color: #3f3f3f"></i>
+        <p>No account yet</p>
+        <p><a style="color: white" href="">Creat An Account</a></p>
+      </div>
+    </div>
   </body>
   <script
     src="https://kit.fontawesome.com/d214b8e9b3.js"
     crossorigin="anonymous"
   ></script>
-  <script
-    src="https://kit.fontawesome.com/d214b8e9b3.js"
-    crossorigin="anonymous"
-  ></script>
-
-  <script src="./regis.js"></script>
+  <script src="./giohang.js"></script>
 </html>
